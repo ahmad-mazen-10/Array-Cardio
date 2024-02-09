@@ -12,4 +12,5 @@ shift => remove frist item
 
 <h4>Resourse</h4>
 https://courses.wesbos.com/account/access/65c17ac973194a9c8f315c5c/view/194130346
+
 https://youtube.com/playlist?list=PLLVZR2VAHRwEdMc8SEDOhCzz3JIna8BEE&si=_0VgULz1s5mjhHUx
