@@ -813,14 +813,14 @@ const data = [
 
 // 1-- Find reviews below 3 stars
 const revsLess3 = data.filter(review => { return review.rating < 3 });
-// console.table(revsLess3)
+console.table(revsLess3)
 
 
 
 // 2-- Find reviews rated 5 stars and get their count
 const revsRated5 = data.filter(reviews => reviews.rating === 5);
-// console.table(revsRated5)
-// console.table(revsRated5.length)
+console.table(revsRated5)
+console.table(revsRated5.length)
 
 
 
@@ -828,27 +828,27 @@ const revsRated5 = data.filter(reviews => reviews.rating === 5);
 // 2-- Concat the previous 2 results into a new array
 const newArr = revsLess3.concat(revsRated5);
 const newArray = [...revsLess3, ...revsRated5];
-// console.table(newArr);
-// console.table(newArray);
+console.table(newArr);
+console.table(newArray);
 
 
 
 // 3-- Find average rating (note about reduce)
 const avgRate = data.reduce((previous, current ) => previous + current.rating ,0) ;
-// console.table(avgRate / data.length);
+console.table(avgRate / data.length);
 
 
 // 4-- Check if every review is above 1 stars
 const checkArr1 = data.map(review => review.rating > 1);
 const checkArr2 = data.every(review => review.rating > 1);
-// console.log(checkArr1);
-// console.log(checkArr2);
+console.log(checkArr1);
+console.log(checkArr2);
 // explain: every => check of all elments ? if all true return true + else if one at least false return false like & in logic
 
 
 // 5-- Check if there exists at least 1 review with 1 star rating
 const checkLeast1 = data.some(review => review.rating === 1);
-// console.log(checkLeast1)
+console.log(checkLeast1)
 // explain: some => check of all elments ? if one at least true return true  like |or in logic
 
 
@@ -856,8 +856,8 @@ const checkLeast1 = data.some(review => review.rating === 1);
 // 6-- Find all reviews by user email/username
 const findInfo1 = data.filter(review => review.email == 'coffey@gmail.com');
 const findInfo2 = data.filter(review => review.username == 'Aline');
-// console.table(findInfo1);
-// console.table(findInfo2);
+console.table(findInfo1);
+console.table(findInfo2);
 
 
 // 7--Find specific review by date between x and y
@@ -867,8 +867,10 @@ const reviewDate = data.filter(review => {
     let createdAt = new Date(review.createdAt);
     return createdAt >= startDate && createdAt <= endDate;
 });
-// console.table(reviewDate);
+console.table(reviewDate);
 // explain : in this case filter return all  elements that meet the condition
+
+
 
 // 8-- Find specific review index by date between x and y
 const specificReview = data.find(review => {
@@ -877,7 +879,7 @@ const specificReview = data.find(review => {
     let createdAt = new Date(review.createdAt);
     return createdAt >= data1 && createdAt <= data2;
 });
-// console.table(specificReview);
+console.table(specificReview);
 //explain : in this case  find returns only first element that meets the condition;
 
 
@@ -893,8 +895,8 @@ const newReviewEnd = {
 }
 const addReviewEnd = (data, newReviewEnd) => data.push(newReviewEnd);
 const updateData = addReviewEnd(data, newReviewEnd);
-// console.log(updateData);
-// console.log(newReviewEnd.email)
+console.log(updateData);
+console.log(newReviewEnd.email)
 
 
 
@@ -909,8 +911,8 @@ const new_review = {
 }
 const addReview = (data, new_review) => data.unshift(new_review);
 const newData = addReview(data, new_review);
-// console.log(newData);
-// console.log(new_review.email)
+console.log(newData);
+console.log(new_review.email)
 
 
 
@@ -924,44 +926,44 @@ const newReview = {
 }
 const addReviewIdx = (data, newReview) => data.push(Math.random(newReview));
 const newDataIdx = addReviewIdx(data, newReview);
-// console.log(newDataIdx);
-// console.log(newReview.email)
+console.log(newDataIdx);
+console.log(newReview.email)
 
 
 
 // 12-- Remove review from end of array
 const rmReviewEnd = data.pop();
-// console.log(rmReviewEnd)
+console.log(rmReviewEnd)
 
 
 // 13-- Remove review from start of array
 const rmReviewStart = data.shift();
-// console.log(rmReviewStart)
+console.log(rmReviewStart)
 
 
 
 // 14-- Remove review from random index of array
 const rmReviewRandom = data.findIndex(review => review == (Math.random()));
-// console.log(rmReviewRandom)
+console.log(rmReviewRandom)
 
 
 
 // 15-- Pick a portion of an array
 const chosPort = data[Math.floor(Math.random() * data.length)];
-// console.log(chosPort)
+console.log(chosPort)
 
 
 // 16-- Count how many reviews with a specific first name
 const start_A = data.filter(user => user.username[0] === 'A');
 const nameCount = start_A.filter(review => review.rating).length;
-// console.log(nameCount)
+console.log(nameCount)
 
 
 
 
 // 17-- Sort by createdAt
 const newSort = data.sort((a,s)=> a.createdAt  - s.createdAt );
-// console.table(newSort)
+console.table(newSort)
 // explain :  This comparing function takes two elements a and b from the data array and subtracts their createdAt values. If the result is negative, it means that a was created earlier than b, and a should come before b in the sorted array. If the result is zero, it means that a and b were created at the same time, and their order in the sorted array doesn't matter. If the result is positive, it means that a was created later than b, and a should come after b in the sorted array.
 
 
@@ -983,7 +985,7 @@ const sortRate = data.sort((a, b) => {
   
 });
 
-// console.table(sortRate);
+console.table(sortRate);
 
 
 // 19-- Print all emails starting with letter A, L, or C, each in a separate log
@@ -993,19 +995,19 @@ const printMails = data.filter(mail => {
 		mail.email.startsWith('l') ||
 		mail.email.startsWith('c'));
 	});
-// printMails.forEach(mail =>	console.table(mail.email));
+printMails.forEach(mail =>	console.table(mail.email));
 
 //other
 data.forEach(item => {
-	// if (['a', 'l', 'c'].includes(item.email[0].toLowerCase()))
-	// console.log(item.email);
+	if (['a', 'l', 'c'].includes(item.email[0].toLowerCase()))
+	console.log(item.email);
 })
 //explain : if this array contain(include) frist letter from email with lowerCase ... will print;
 
 // other
 data.forEach(el => {
-	// if (/^(a|l|c)/i.test(el.email))
-	// console.log(el.email);
+	if (/^(a|l|c)/i.test(el.email))
+	console.log(el.email);
 })
 
 
